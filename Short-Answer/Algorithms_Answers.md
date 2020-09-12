@@ -14,12 +14,12 @@ Suppose that you have an n-story building and plenty of eggs. Suppose also that 
 
 I would use binary search for this problem:
 
-1. Find F which is the floor where eggs broken will be minimized when dropped
-2. Anything higher or equal to F will results to higher eggs broken when thrown off
-3. Throw the eggs and check the no. of eggs broken
-4. If results are high, split the floor into halves again but the highest floor would become our previous middle floor - 1, then check again
-5. If results are still high, split the floor again, and check again the middle floor
-    - If high, do #4
-    - If low, split the floors into halves, and move the starting point to the previous middle + 1 then check
+1. Find F which is the floor where eggs broken will be minimized when dropped.
+2. Anything higher or equal to F will results to higher eggs broken when thrown off, best case to check first in the middle floor.
+3. Throw the eggs and check the no. of eggs broken.
+4. If results are high, split the floor into halves but the highest floor would become our previous middle floor - 1, then check.
+   -If result is high, do step #4 again and check again the middle floor.
+   -If result is low, split the floors into halves, and move the starting point to the previous middle + 1 then check.
+5. Repeat step #4 until we reach the value of F
 
-I think since we are looping the N, and dividing it into halves in each iteration, time complexity would be O(log n).
+I think the time complexity would be O(log n), since we are looping the N, and dividing it into halves in each iteration.
